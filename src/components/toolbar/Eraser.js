@@ -2,7 +2,7 @@ import React from 'react'
 
 const Eraser = props => {
     return (
-        <div></div>
+        <button onClick={props.setEraser}>Eraser</button>
     )
 }
 

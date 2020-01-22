@@ -16,13 +16,16 @@ const SquareContainer = styled.div`
 `
 
 const Canvas = props => {
-    const [grid, setGrid] = useState([...Array(1024).keys()])
+    const [grid, setGrid] = useState([...Array(1024).keys()])    
 
     return (
         <Wrapper>
-            <SquareContainer>
+            <SquareContainer
+                style={{border: props.hideGrid && 'none'}}
+            >
                 {grid.map(number => (
                     <Square
+                        {...props}
                         key={number}
                     />
                 ))}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const ToggleGrid = props => {
     return (
-        <div></div>
+        <button onClick={props.toggleGrid}>Toggle Grid</button>
     )
 }
 

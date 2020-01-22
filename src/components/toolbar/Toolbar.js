@@ -8,9 +8,9 @@ import Eyedropper from './Eyedropper'
 const Toolbar = props => {
     return (
         <div>
-            <ToggleGrid />
-            <Pencil />
-            <Eraser />
+            <ToggleGrid toggleGrid={() => props.setHideGrid(!props.hideGrid)} />
+            <Pencil setPencil={() => props.setCurrentTool('pencil')} />
+            <Eraser setEraser={() => props.setCurrentTool('eraser')} />
             <Eyedropper />
         </div>
     )

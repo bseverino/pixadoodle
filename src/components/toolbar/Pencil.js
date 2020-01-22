@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pencil = props => {
     return (
-        <div></div>
+        <button onClick={props.setPencil}>Pencil</button>
     )
 }
 
