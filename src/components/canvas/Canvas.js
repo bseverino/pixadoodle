@@ -5,14 +5,15 @@ import Square from './Square'
 
 const Wrapper = styled.div`
     width: 481px;
+    overflow: hidden;
 `
 
 const SquareContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 482px;
+    width: 490px;
     border-top: 1px solid black;
-    border-left: 1px solid black;
+    border-left: 1px solid black;    
 `
 
 const Canvas = props => {
