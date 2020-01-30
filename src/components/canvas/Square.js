@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 const StyledSquare = styled.div`
     width: 15px;
@@ -12,10 +13,12 @@ const Square = props => {
     const [bgColor, setBgColor] = useState('#fff')
 
     const handleClick = () => {
-        if (props.currentTool === 'pencil') {
-            setBgColor('#000')
-        } else if (props.currentTool === 'eraser') {
-            setBgColor('#fff')
+        if (props.isDrawing) {
+            if (props.currentTool === 'pencil') {
+                setBgColor('#000')
+            } else if (props.currentTool === 'eraser') {
+                setBgColor('#fff')
+            }
         }
     }
 
@@ -23,10 +26,16 @@ const Square = props => {
         <div>
             <StyledSquare
                 style={{ backgroundColor: bgColor, border: props.hideGrid && 'none' }}
-                onMouseDown={handleClick}
+                onMouseOver={handleClick}
             />
         </div>
     )
 }
 
-export default Square
+const mapStateToProps = state => {
+    return {
+        isDrawing: state.isDrawing
+    }
+}
+
+export default connect(mapStateToProps, {})(Square)

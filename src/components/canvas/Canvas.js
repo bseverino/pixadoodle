@@ -17,7 +17,7 @@ const SquareContainer = styled.div`
 `
 
 const Canvas = props => {
-    const [grid, setGrid] = useState([...Array(1024).keys()])    
+    const [grid, setGrid] = useState([...Array(1024).keys()])
 
     return (
         <Wrapper>
